@@ -12,7 +12,7 @@ private:
 	std::string document_location;
 
 	// The head commit is the timeline hash where the document is in it's most final form
-	std::string head_hash;
+	Commit* head_commit = nullptr;
 public:
 	// Rollback the commit history to a certain point in the timeline.
 	void rollback(std::string timeline_hash);
@@ -25,4 +25,10 @@ public:
 
 	// Getter: document_location
 	std::string getDocumentLocation() const;
+
+	// Getter: head_commit
+	Commit* getHeadCommit() const;
+
+	// Sets the head commit
+	void setHeadCommit(Commit* new_head);
 };
