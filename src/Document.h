@@ -8,9 +8,6 @@ private:
 	// This is to save RAM and not load ALL history.
 	static const unsigned int cached_commit_history = 20;
 
-	// The commit history, stored as a vector of commits
-	std::vector<Commit> commit_history;
-
 	// Local document location
 	std::string document_location;
 

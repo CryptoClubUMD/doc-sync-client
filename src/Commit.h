@@ -18,6 +18,12 @@ private:
 	// SHA-2(previous_timeline_hash + this_content_hash)
 	// If first commit, SHA-2("timelinebegin" + this_content_hash)
 	std::string timeline_hash;
+
+	// Next commit pointer
+	Commit* next_commit = nullptr;
+
+	// Prev commit pointer
+	Commit* prev_commit = nullptr;
 public:
 	Commit();
 
