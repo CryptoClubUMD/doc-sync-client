@@ -16,10 +16,14 @@ std::string Document::getDocumentLocation() const{
 	return document_location;
 }
 
-Commit* getHeadCommit() const{
+Commit* Document::getHeadCommit() const{
 	return head_commit;
 }
 
-void setHeadCommit(Commit* new_head){
+void Document::setHeadCommit(Commit* new_head){
 	head_commit = new_head;
+}
+
+void Document::scanDiff(){
+
 }

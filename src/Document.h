@@ -31,4 +31,7 @@ public:
 
 	// Sets the head commit
 	void setHeadCommit(Commit* new_head);
+
+	// Find differences and add them as commits
+	void scanDiff();
 };
