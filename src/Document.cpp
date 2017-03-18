@@ -1,5 +1,15 @@
 #include "Document.h"
 
+bool cachedIsLastCommit() const{
+	
+}
+
+void cacheDoc() const{
+	if(!cachedIsLastCommit()){
+
+	}
+}
+
 void Document::rollback(std::string timeline_hash){
 
 }

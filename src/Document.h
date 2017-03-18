@@ -14,6 +14,16 @@ private:
 
 	// The head commit is the timeline hash where the document is in it's most final form
 	std::shared_pointer<Commit> head_commit;
+
+	// Where the old file cache is stored
+	static const std::string old_cache_dir = "../old_file_cache/";
+
+	// Determines whether the last cached version of this file is in line with the last known commit
+	bool cachedIsLastCommit() const;
+
+	// Creates the cache file at latest commit in the 'oldcache' directory.
+	// Name of the file is "old_[latest commit full hash]_[document name].[document_extension]"
+	void cacheDoc() const;	
 public:
 	// Rollback the commit history to a certain point in the timeline.
 	void rollback(std::string timeline_hash);
@@ -29,9 +39,6 @@ public:
 
 	// Getter: head_commit
 	Commit* getHeadCommit() const;
-
-	// Creates the cache file at latest commit in the 'oldcache' directory.
-	void cacheDoc();
 
 	// Sets the head commit
 	void setHeadCommit(Commit* new_head);
