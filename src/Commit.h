@@ -1,4 +1,5 @@
 #include <string>
+#include <memory>
 
 class Commit {
 private:
@@ -20,10 +21,10 @@ private:
 	std::string timeline_hash;
 
 	// Next commit pointer
-	std::shared_pointer<Commit> next_commit;
+	std::shared_ptr<Commit> next_commit;
 
 	// Prev commit pointer
-	std::shared_pointer<Commit> prev_commit;
+	std::shared_ptr<Commit> prev_commit;
 public:
 	Commit();
 

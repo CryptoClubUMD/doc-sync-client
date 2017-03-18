@@ -1,10 +1,14 @@
 #include "Document.h"
 
-bool cachedIsLastCommit() const{
-	
+Document::Document(){
+	//old_cache_dir = "../old_cache_dir/";
 }
 
-void cacheDoc() const{
+bool Document::cachedIsLastCommit() const{
+	return false;
+}
+
+void Document::cacheDoc() const{
 	if(!cachedIsLastCommit()){
 
 	}
@@ -19,6 +23,7 @@ void Document::bringup(){
 }
 
 std::string Document::getHeadHash() const{
+	std::string head_hash = "DOC_HASH_AT_HEAD";
 	return head_hash;
 }
 
@@ -26,11 +31,11 @@ std::string Document::getDocumentLocation() const{
 	return document_location;
 }
 
-Commit* Document::getHeadCommit() const{
+std::shared_ptr<Commit> Document::getHeadCommit() const{
 	return head_commit;
 }
 
-void Document::setHeadCommit(Commit* new_head){
+void Document::setHeadCommit(std::shared_ptr<Commit> new_head){
 	head_commit = new_head;
 }
 
