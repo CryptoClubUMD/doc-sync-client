@@ -20,10 +20,10 @@ private:
 	std::string timeline_hash;
 
 	// Next commit pointer
-	Commit* next_commit = nullptr;
+	std::shared_pointer<Commit> next_commit;
 
 	// Prev commit pointer
-	Commit* prev_commit = nullptr;
+	std::shared_pointer<Commit> prev_commit;
 public:
 	Commit();
 

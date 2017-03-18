@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <memory>
 #include "Commit.h"
 
 class Document {
@@ -12,7 +13,7 @@ private:
 	std::string document_location;
 
 	// The head commit is the timeline hash where the document is in it's most final form
-	Commit* head_commit = nullptr;
+	std::shared_pointer<Commit> head_commit;
 public:
 	// Rollback the commit history to a certain point in the timeline.
 	void rollback(std::string timeline_hash);
@@ -28,6 +29,9 @@ public:
 
 	// Getter: head_commit
 	Commit* getHeadCommit() const;
+
+	// Creates the cache file at latest commit in the 'oldcache' directory.
+	void cacheDoc();
 
 	// Sets the head commit
 	void setHeadCommit(Commit* new_head);
