@@ -4,7 +4,7 @@
 class CSVConfig {
 private:
 	// Each row
-	std::vector rows;
+	std::vector<std::vector<std::string>> rows;
 
 	// Location of the config file
 	std::string location;
