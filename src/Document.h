@@ -22,9 +22,6 @@ private:
 	// The head commit is the timeline hash where the document is in it's most final form
 	std::shared_ptr<Commit> head_commit;
 
-	// Where the old file cache is stored
-	//static std::string old_cache_dir;
-
 	// Determines whether the last cached version of this file is in line with the last known commit
 	bool cachedIsLastCommit() const;
 
