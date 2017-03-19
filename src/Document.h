@@ -29,6 +29,8 @@ private:
 	// Creates the cache file at latest commit in the 'oldcache' directory.
 	// Name of the file is "old_[latest commit full hash]_[document name].[document_extension]"
 	void cacheDoc() const;
+
+	bool documentIsTracked() const;
 public:
 	Document();
 
