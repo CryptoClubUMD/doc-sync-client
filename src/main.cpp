@@ -1,8 +1,9 @@
 #include <iostream>
+#include <new>
 #include "Document.h"
 
 int main(){
-	Document testdoc = new Document("../test/foofile.txt");
+	Document testdoc = Document("../test/foofile.txt");
 
 	testdoc.initialize();
 
