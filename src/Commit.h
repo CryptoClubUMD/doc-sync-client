@@ -1,3 +1,6 @@
+#ifndef COMMIT_
+#define COMMIT_
+
 #include <string>
 #include <memory>
 
@@ -43,3 +46,5 @@ public:
 	// Gets a formatted string of the time that the commit was created
 	std::string creationTime() const;
 };
+
+#endif

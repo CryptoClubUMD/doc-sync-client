@@ -1,3 +1,6 @@
+#ifndef CSVCONFIG_
+#define CSVCONFIG_
+
 #include <vector>
 #include <string>
 
@@ -20,3 +23,5 @@ public:
 	// Row count
 	unsigned int rowCount() const;
 };
+
+#endif

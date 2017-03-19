@@ -1,7 +1,12 @@
+#ifndef DOCUMENT_
+#define DOCUMENT_
+
 #include <string>
 #include <vector>
 #include <memory>
+
 #include "Commit.h"
+#include "CSVConfig.h"
 
 class Document {
 private:
@@ -31,6 +36,7 @@ private:
 	void cacheDoc() const;
 
 	bool documentIsTracked() const;
+
 public:
 	Document();
 
@@ -63,3 +69,5 @@ public:
 	// Find differences and add them as commits
 	void scanDiff();
 };
+
+#endif
