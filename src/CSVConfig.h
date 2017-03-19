@@ -9,6 +9,8 @@ private:
 	// Location of the config file
 	std::string location;
 
+	// Explode string by commas
+	std::vector<std::string> commaExplode(std::string) const;
 public:
 	CSVConfig(std::string rlocation);
 
