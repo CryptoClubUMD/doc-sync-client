@@ -15,6 +15,12 @@ private:
 	// Hash of the line content
 	std::string content_hash;
 
+	// Hash of the document content
+	std::string document_hash;
+
+	// Incremented ID
+	unsigned int commit_id;
+
 	// The time created
 	time_t at_time;
 
