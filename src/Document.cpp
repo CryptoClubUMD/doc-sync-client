@@ -9,29 +9,39 @@ Document::Document(std::string rdocument_location){
 }
 
 void Document::initialize(){
-	// If: document already tracked
-		// Fill in document variables from file
-		// Make sure cached correctly
-		// Load commits for that file
-	// Else:
-		// Create an add commit for each line already existing
-		// Cache the document in the compare folder
-		// Add the document to the tracked list
-	initialized = true;
+	// Attempting to initialize more than once may yield unexpected behavior
+	if(!initialized){
+		if(documentIsTracked()){
+			// Fill in document variables from file
+			// Make sure cached correctly
+			// Load commits for that file
+		}else{
+			// Create an add commit for each line already existing
+			// Cache the document in the compare folder
+			// Add the document to the tracked list
+		}
+		initialized = true;
+	}
 }
 
 bool Document::documentIsTracked() const{
+	// Load the tracked document list
 	CSVConfig tracked_docs = CSVConfig("../data/tracked_docs.csv");
 	bool is_tracked(false);
 
+	// We don't want to be checking unless the file url for this document is defined
+	// TODO: Error if the document location is empty
 	if(!document_location.empty()){
+		// For each file entry in the list of tracked documents
 		for(unsigned int i = 0; i < tracked_docs.rowCount(); ++i){
 			if(document_location == tracked_docs.getValue(i, 0)){
+				// The document location is found in the CSV document list
 				is_tracked = true;
 			}
+			// TODO: If there are duplicate entries found for one file URL, throw an error
 		}
 	}
-
+	
 	return is_tracked;
 }
 
