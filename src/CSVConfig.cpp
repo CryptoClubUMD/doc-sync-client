@@ -22,8 +22,14 @@ unsigned int CSVConfig::rowCount() const{
 	return 0;
 }
 
-std::vector<std::string> commaExplode(std::string) const{
+std::vector<std::string> commaExplode(std::string line) const{
+	std::stringstream content(line);
 	std::vector<std::string> values;
+	std::string segment;
+
+	while(std::getline(content, segment, ",")){
+		values.push_back(segment);
+	}
 
 	return values;
 }
