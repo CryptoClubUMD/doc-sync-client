@@ -7,10 +7,8 @@ CSVConfig::CSVConfig(std::string rlocation){
 	std::string line;
 	filehook.open(rlocation.c_str());
 
-	std::vector<std::string> row_contents;
-
 	while(getline(filehook, line)){
-		row_contents = commaExplode(line);
+		rows.push_back(commaExplode(line));
 	}
 }
 
