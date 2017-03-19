@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+
 #include "Document.h"
 #include "CSVConfig.h"
 
@@ -18,7 +21,18 @@ void Document::initialize(){
 }
 
 bool Document::documentIsTracked() const{
-	return false;
+	CSVConfig tracked_docs = CSVConfig("../data/tracked_docs.csv");
+	bool is_tracked(false);
+
+	if(!document_location.empty()){
+		for(unsigned int i = 0; i < tracked_docs.rowCount(); ++i){
+			if(document_location == tracked_docs.getValue(i, 0)){
+				is_tracked = true;
+			}
+		}
+	}
+
+	return is_tracked;
 }
 
 bool Document::cachedIsLastCommit() const{
