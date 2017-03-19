@@ -1,7 +1,18 @@
 #include "Document.h"
 
-Document::Document(){
-	//old_cache_dir = "../old_cache_dir/";
+Document::Document(std::string rdocument_location){
+	document_location = rdocument_location;
+}
+
+void Document::initialize(){
+	// If: document already tracked
+		// Fill in document variables from file
+		// Load commits for that file
+	// Else:
+		// Create an add commit for each line already existing
+		// Cache the document in the compare folder
+		// Add the document to the tracked list
+	initialized = true;
 }
 
 bool Document::cachedIsLastCommit() const{
