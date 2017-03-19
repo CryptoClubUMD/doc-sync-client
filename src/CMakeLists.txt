@@ -7,4 +7,5 @@ add_executable(
 	main.cpp
 	Document.cpp
 	Commit.cpp
+	CSVConfig.cpp
 )
