@@ -20,7 +20,7 @@ std::string CSVConfig::getValue(unsigned int row, unsigned int column) const{
 }
 
 unsigned int CSVConfig::rowCount() const{
-	return 0;
+	return rows.size();
 }
 
 std::vector<std::string> CSVConfig::commaExplode(std::string line) const{
