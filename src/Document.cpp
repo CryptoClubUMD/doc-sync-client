@@ -51,7 +51,10 @@ bool Document::cachedIsLastCommit() const{
 
 void Document::cacheDoc() const{
 	if(!cachedIsLastCommit()){
+		std::ifstream src(document_location, std::ios::binary);
+    std::ofstream dst("../data/compare/old_foofile.txt", std::ios::binary);
 
+    dst << src.rdbuf();
 	}
 }
 
