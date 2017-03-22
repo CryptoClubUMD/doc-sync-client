@@ -34,6 +34,9 @@ private:
 
 	bool documentIsTracked() const;
 
+	// Gets the filename of the file using the URL
+	std::string filename() const;
+
 public:
 	Document();
 

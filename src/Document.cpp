@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <vector>
+#include <fstream>
 
 #include "Document.h"
 #include "CSVConfig.h"
@@ -45,6 +48,19 @@ bool Document::documentIsTracked() const{
 	return is_tracked;
 }
 
+std::string Document::filename() const{
+	std::stringstream rawcontent(document_location);
+	std::vector<std::string> values;
+	std::string segment;
+	
+	// TODO: "/" may not work on non-unix environments due to file urls being stored differently
+	while(std::getline(rawcontent, segment, '/')){
+		values.push_back(segment);
+	}
+
+	return values[values.size() - 1];
+}
+
 bool Document::cachedIsLastCommit() const{
 	return false;
 }
@@ -59,7 +75,7 @@ void Document::cacheDoc() const{
 }
 
 void Document::rollback(std::string timeline_hash){
-
+	
 }
 
 void Document::bringup(){
