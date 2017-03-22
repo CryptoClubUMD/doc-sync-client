@@ -1,4 +1,5 @@
 */build/*
 /src/old_file_cache/*
-
+/src/data/commits
+/src/data/compare
 /src/data/tracked_docs.csv
