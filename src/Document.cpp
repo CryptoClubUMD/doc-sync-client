@@ -68,7 +68,8 @@ bool Document::cachedIsLastCommit() const{
 void Document::cacheDoc() const{
 	if(!cachedIsLastCommit()){
 		std::ifstream src(document_location, std::ios::binary);
-    std::ofstream dst("../data/compare/old_foofile.txt", std::ios::binary);
+		// TODO: Will need to make a unique way to store this file... what if there are multiple files tracked with same file name?
+    std::ofstream dst("../data/compare/old_"+filename(), std::ios::binary);
 
     dst << src.rdbuf();
 	}
