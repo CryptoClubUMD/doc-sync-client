@@ -67,6 +67,7 @@ bool Document::cachedIsLastCommit() const{
 
 void Document::cacheDoc() const{
 	if(!cachedIsLastCommit()){
+		// TODO: Consider implementing better security here... copying without checking URL could be risky
 		std::ifstream src(document_location, std::ios::binary);
 		// TODO: Will need to make a unique way to store this file... what if there are multiple files tracked with same file name?
     std::ofstream dst("../data/compare/old_"+filename(), std::ios::binary);
@@ -76,11 +77,11 @@ void Document::cacheDoc() const{
 }
 
 void Document::rollback(std::string timeline_hash){
-	
+	// TODO: Implement this function
 }
 
 void Document::bringup(){
-
+	// TODO: Implement this function
 }
 
 std::string Document::getHeadHash() const{
@@ -101,5 +102,5 @@ void Document::setHeadCommit(std::shared_ptr<Commit> new_head){
 }
 
 void Document::scanDiff(){
-
+	// TODO: Implement this function
 }
