@@ -28,11 +28,17 @@ private:
 	// Commit count
 	unsigned int commit_count;
 
+	// Document track ID
+	unsigned int tracked_id;
+
+	// Document tracked status
+	bool is_tracked;
+
 	// Creates the cache file at latest commit in the 'oldcache' directory.
 	// Name of the file is "old_[latest commit full hash]_[document name].[document_extension]"
 	void cacheDoc() const;
-
-	bool documentIsTracked() const;
+	
+	void loadDocumentMeta() const;
 
 	// Gets the filename of the file using the URL
 	std::string filename() const;

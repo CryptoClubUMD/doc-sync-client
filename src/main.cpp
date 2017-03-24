@@ -5,7 +5,5 @@
 int main(){
 	Document testdoc = Document("../test/foofile.txt");
 
-	testdoc.initialize();
-
 	return EXIT_SUCCESS;
 }

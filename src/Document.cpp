@@ -9,43 +9,43 @@
 
 Document::Document(std::string rdocument_location){
 	document_location = rdocument_location;
+	initialize();
 }
+
+Document::Document(unsigned int rtracked_id){
+	tracked_id = rtracked_id;
+	loadDocumentMeta();	
+}
+
 
 void Document::initialize(){
 	// Attempting to initialize more than once may yield unexpected behavior
 	if(!initialized){
-		if(documentIsTracked()){
-			// TODO: Fill in document variables from file
-			// TODO: Make sure cached correctly
-			// TODO: Load commits for that file
-		}else{
-			// TODO: Create an add commit for each line already existing
-			// TODO: Cache the document in the compare folder
-			// TODO: Add the document to the tracked list
-		}
+		// TODO: Create an add commit for each line already existing
+		// TODO: Cache the document in the compare folder
+		// TODO: Add the document to the tracked list
 		initialized = true;
 	}
 }
 
-bool Document::documentIsTracked() const{
+void Document::loadDocumentMeta() const{
 	// Load the tracked document list
 	CSVConfig tracked_docs = CSVConfig("../data/tracked_docs.csv");
-	bool is_tracked(false);
 
 	// We don't want to be checking unless the file url for this document is defined
 	// TODO: Error if the document location is empty
 	if(!document_location.empty()){
 		// For each file entry in the list of tracked documents
 		for(unsigned int i = 0; i < tracked_docs.rowCount(); ++i){
-			if(document_location == tracked_docs.getValue(i, 0)){
+			if(tracked_id == tracked_docs.getValue(i, 0)){
 				// The document location is found in the CSV document list
 				is_tracked = true;
+				initialized = true;
+				document_location = tracked_docs.getValue(i, 1);
 			}
 			// TODO: If there are duplicate entries found for one file URL, throw an error
 		}
 	}
-	
-	return is_tracked;
 }
 
 std::string Document::filename() const{
