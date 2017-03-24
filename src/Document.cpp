@@ -102,5 +102,9 @@ void Document::setHeadCommit(std::shared_ptr<Commit> new_head){
 }
 
 void Document::scanDiff(){
-	// TODO: Implement this function
+	// Only scan for differences if the compare document contains the last known commit.
+	if(cachedIsLastCommit()){
+		
+	}
+
 }
