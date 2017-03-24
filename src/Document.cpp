@@ -15,13 +15,13 @@ void Document::initialize(){
 	// Attempting to initialize more than once may yield unexpected behavior
 	if(!initialized){
 		if(documentIsTracked()){
-			// Fill in document variables from file
-			// Make sure cached correctly
-			// Load commits for that file
+			// TODO: Fill in document variables from file
+			// TODO: Make sure cached correctly
+			// TODO: Load commits for that file
 		}else{
-			// Create an add commit for each line already existing
-			// Cache the document in the compare folder
-			// Add the document to the tracked list
+			// TODO: Create an add commit for each line already existing
+			// TODO: Cache the document in the compare folder
+			// TODO: Add the document to the tracked list
 		}
 		initialized = true;
 	}
