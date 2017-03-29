@@ -6,7 +6,6 @@
 #include <memory>
 
 #include "Commit.h"
-#include "CSVConfig.h"
 
 class Document {
 private:

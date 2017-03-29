@@ -5,7 +5,6 @@
 #include <fstream>
 
 #include "Document.h"
-#include "CSVConfig.h"
 
 Document::Document(std::string rdocument_location){
 	document_location = rdocument_location;
@@ -29,23 +28,8 @@ void Document::initialize(){
 }
 
 void Document::loadDocumentMeta() const{
-	// Load the tracked document list
-	CSVConfig tracked_docs = CSVConfig("../data/tracked_docs.csv");
-
-	// We don't want to be checking unless the file url for this document is defined
 	// TODO: Error if the document location is empty
-	if(!document_location.empty()){
-		// For each file entry in the list of tracked documents
-		for(unsigned int i = 0; i < tracked_docs.rowCount(); ++i){
-			/*if(tracked_id == tracked_docs.getValue(i, 0)){
-				// The document location is found in the CSV document list
-				is_tracked = true;
-				initialized = true;
-				document_location = tracked_docs.getValue(i, 1);
-			}*/
-			// TODO: If there are duplicate entries found for one file URL, throw an error
-		}
-	}
+	// TODO: If there are duplicate entries found for one file URL, throw an error
 }
 
 std::string Document::filename() const{
