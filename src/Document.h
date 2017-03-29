@@ -47,6 +47,8 @@ public:
 	Document();
 
 	Document(std::string rdocument_location);
+	
+	Document(unsigned int rtracked_id);
 
 	// Rollback the commit history to a certain point in the timeline.
 	void rollback(std::string timeline_hash);
