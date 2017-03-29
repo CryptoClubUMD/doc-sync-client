@@ -37,12 +37,12 @@ void Document::loadDocumentMeta() const{
 	if(!document_location.empty()){
 		// For each file entry in the list of tracked documents
 		for(unsigned int i = 0; i < tracked_docs.rowCount(); ++i){
-			if(tracked_id == tracked_docs.getValue(i, 0)){
+			/*if(tracked_id == tracked_docs.getValue(i, 0)){
 				// The document location is found in the CSV document list
 				is_tracked = true;
 				initialized = true;
 				document_location = tracked_docs.getValue(i, 1);
-			}
+			}*/
 			// TODO: If there are duplicate entries found for one file URL, throw an error
 		}
 	}

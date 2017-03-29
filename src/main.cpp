@@ -1,9 +1,17 @@
-#include <iostream>
+#define DEBUG_MODE
+
 #include <new>
+#include <iostream>
 #include "Document.h"
 
-int main(){
-	Document testdoc = Document("../test/foofile.txt");
+#ifdef DEBUG_MODE
+#include "tests.h"
+#endif
 
+int main(){
+	testJson();
+	
+	//Document testdoc = Document("../test/foofile.txt");	
+	
 	return EXIT_SUCCESS;
 }

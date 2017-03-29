@@ -8,4 +8,6 @@ add_executable(
 	Document.cpp
 	Commit.cpp
 	CSVConfig.cpp
+	jsoncpp.cpp
+	tests.cpp
 )
