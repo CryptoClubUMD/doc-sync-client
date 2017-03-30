@@ -92,7 +92,7 @@ void Document::scanDiff(){
 	}
 }
 
-void Document::commitLine(unsigned int line_num, commit_type_t commit_type){
+std::shared_ptr<Commit> Document::commitLine(unsigned int line_num, commit_type_t commit_type){
 	std::ifstream file_handle;
 	file_handle.open(document_location.c_str());
 	unsigned int line_counter(1);
@@ -107,7 +107,12 @@ void Document::commitLine(unsigned int line_num, commit_type_t commit_type){
 		}
 	}
 
-	if(line_found){
-		auto new_commit = std::make_shared<Commit>(the_line, line_num, tracked_id);
+	if(!line_found){
+		// TODO: Exception upon line not being found.
+		throw 1;
 	}
+
+	auto new_commit = std::make_shared<Commit>(the_line, line_num, tracked_id);
+
+	return new_commit;
 }

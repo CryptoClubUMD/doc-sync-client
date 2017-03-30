@@ -79,7 +79,7 @@ public:
 	void scanDiff();
 
 	// Creates a new commit for a given line.
-	void commitLine(unsigned int line_num, commit_type_t commit_type);
+	std::shared_ptr<Commit> commitLine(unsigned int line_num, commit_type_t commit_type);
 };
 
 #endif
