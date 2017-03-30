@@ -92,3 +92,19 @@ void Document::scanDiff(){
 	}
 
 }
+
+void Document::commitLine(unsigned int line_num, commit_type_t commit_type){
+	std::ifstream file_handle;
+	file_handle.open(document_location.c_str());
+	unsigned int line_counter(1);
+	std::string the_line;
+	bool line_found(false);
+	
+	while(!line_found && getline(file_handle, the_line)){
+		if(line_counter == line_num){
+			line_found = true;
+		}else{
+			++line_counter;
+		}
+	}
+}

@@ -7,6 +7,8 @@
 
 #include "Commit.h"
 
+enum commit_type_t {INS, DEL};
+
 class Document {
 private:
 	// Only load the last N commits into the history.
@@ -75,6 +77,9 @@ public:
 
 	// Find differences and add them as commits
 	void scanDiff();
+
+	// Creates a new commit for a given line.
+	void commitLine(unsigned int line_num, commit_type_t commit_type);
 };
 
 #endif
