@@ -17,7 +17,10 @@ private:
 
 	// Hash of the document content
 	std::string document_hash;
-
+	
+	// ID of the document
+	unsigned int document_id;	
+	
 	// Incremented ID
 	unsigned int commit_id;
 
@@ -34,8 +37,14 @@ private:
 
 	// Prev commit pointer
 	std::shared_ptr<Commit> prev_commit;
-public:
+
 	Commit();
+public:
+	// Load existing commit
+	Commit(unsigned int commit_id);
+	
+	// Create a new commit
+	Commit(std::string line_content, unsigned int line_number, unsigned int document_id);
 
 	// Getter: line_content
 	std::string getLineContent() const;

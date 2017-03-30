@@ -90,7 +90,6 @@ void Document::scanDiff(){
 	if(cachedIsLastCommit()){
 		
 	}
-
 }
 
 void Document::commitLine(unsigned int line_num, commit_type_t commit_type){
