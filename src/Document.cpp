@@ -106,4 +106,8 @@ void Document::commitLine(unsigned int line_num, commit_type_t commit_type){
 			++line_counter;
 		}
 	}
+
+	if(line_found){
+		auto new_commit = std::make_shared<Commit>(the_line, line_num, tracked_id);
+	}
 }
