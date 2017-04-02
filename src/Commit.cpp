@@ -3,11 +3,15 @@
 Commit::Commit(unsigned int commit_id){
 
 }
-	
+
 Commit::Commit(std::string line_content, unsigned int line_number, unsigned int document_id):
-	line_content(line_content),	
+	line_content(line_content),
 	line_number(line_number),
 	document_id(document_id){
+
+}
+
+void Commit::saveCommit() const{
 	
 }
 
