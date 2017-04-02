@@ -10,8 +10,9 @@
 
 int main(){
 	testJson();
-	
+	testCrypto();
+
 	//Document testdoc = Document("../test/foofile.txt");
-	
+
 	return EXIT_SUCCESS;
 }
